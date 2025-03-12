@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ConfiguracaoController;
+use App\Http\Controllers\EscalaController;
 use App\Http\Controllers\PorteiroController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,3 +19,6 @@ Route::prefix('configuracoes')->group(function () {
     Route::post('/', [ConfiguracaoController::class, 'store']); // Salvar e Atualizar
     
 });
+
+Route::get('/listarEscala', [EscalaController::class, 'listarEscala']);
+Route::post('/gerarEscala', [EscalaController::class, 'gerarEscala']);
